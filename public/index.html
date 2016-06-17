@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Main Page of SynonymService</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <td style= "width:27%;">
+          <img class = "newappIcon" src="images/newapp-icon.png">
+        <td>
+            <h1>Hi there!</h1>
+          <p>Thanks for visiting the
+            <span class = "blue">SynonymService</span>.
+		</td>
+		
+	</tr>
+	<tr>
+        <td >
+          
+        <td>
+            <span class = "blue">Available Commands</span>
+		<br><br>
+            Supported Request types:<br><br>
+			Get Full Synonym entry by ID:<br>
+<a href="http://SynonymService.w3ibm.mybluemix.net/synonymsbyid/da86e758ec7425f011e69e13d2fade0d" target="_blank">
+	http://SynonymService.w3ibm.mybluemix.net/synonymsbyid/da86e758ec7425f011e69e13d2fade0d</a><br><br>
+			Get Synonyms by word (multiple synonyms in the example):<br>
+<a href="http://SynonymService.w3ibm.mybluemix.net/synonymsbyword/cold" target="_blank">
+			http://SynonymService.w3ibm.mybluemix.net/synonymsbyword/cold</a><br><br>
+			Get Synonyms by word (single synonym in the example):<br>
+<a href="http://SynonymService.w3ibm.mybluemix.net/synonymsbyword/happiness" target="_blank">
+			http://SynonymService.w3ibm.mybluemix.net/synonymsbyword/happiness</a><br><br>
+			Get first and shortest synonym by word:<br>
+<a href="http://SynonymService.w3ibm.mybluemix.net/getSingleSynonymByWord/cold" target="_blank">
+			http://SynonymService.w3ibm.mybluemix.net/getSingleSynonymByWord/cold</a><br><br>
+			Stemming than get first and shortest synonym by word:<br>
+<a href="http://SynonymService.w3ibm.mybluemix.net/stemmingAndGetShortestSynonym/greatness" target="_blank">
+			http://SynonymService.w3ibm.mybluemix.net/stemmingAndGetShortestSynonym/greatness</a><br><br>
+			Stemming than get first and shortest synonym by word list:<br>
+<a href="http://SynonymService.w3ibm.mybluemix.net/bagOfWordsGetSynonyms?words={%20%22words%22:%20[%22cold%22,%20%22greatness%22,%22fearness%22,%22animal%22,%22paradise%22,%22heaven%22%20]%20}" target="_blank">
+			http://SynonymService.w3ibm.mybluemix.net/bagOfWordsGetSynonyms?words={ "words": ["word1", "wordN"] }</a><br><br>
+		</td>
+	</tr>
+    </table>
+  </body>
+
+</html>
