@@ -83,7 +83,7 @@ module.exports = {
 	},
 	
 	bagOfWordsGetSynonyms: function(words,callback) { 
-		var wordsJson = JSON.parse(words).words;
+		var wordsJson = words.words;
 		var db = cloudant.db.use("synonyms");
 		var finalResult = {"words": [] };
 		var resultLength = wordsJson.length;
@@ -104,7 +104,7 @@ module.exports = {
 								//console.log(attributename+": "+doc.value[attributename]);
 								if (doc.value[attributename] != "" && (attributename.indexOf("Syn") > -1) && doc.value[attributename].trim().length < resultLength) {
 										resultLength = doc.value[attributename].trim().length;
-										singleResult = doc.value[attributename];
+										singleResult = doc.value[attributename].trim();
 								}
 							}	  
 						}

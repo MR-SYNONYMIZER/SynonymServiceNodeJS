@@ -14,6 +14,8 @@ var cfenv = require('cfenv');
 
 // create a new express server
 var app = express();
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
 
 //get script that handles Cloudant operations
 var cloudantOps = require('./cloudantOps.js');
@@ -61,10 +63,11 @@ app.all('/stemmingAndGetShortestSynonym/:word', function (req, res, next) {
 	});
 });
 
-//define the path for the word synonyms extraction
-app.all('/bagOfWordsGetSynonyms/', function (req, res, next) {
-	var words = req.param('words') || { "words": ["cold", "greatness" ] };
-	cloudantOps.bagOfWordsGetSynonyms (words,function(err, data) {
+//define the path for the word synonyms extraction, parameters in POST BODY
+app.post('/bagOfWordsGetSynonyms/', function (req, res, next) {
+	var data = "error";
+	var body = req.body || { "words": ["cold", "greatness" ] };
+	cloudantOps.bagOfWordsGetSynonyms (body,function(err, data) {
 	  if (err) throw err; // Check for the error and throw if it exists.
 	  res.send(data);
 	  //console.log('Result', data);
